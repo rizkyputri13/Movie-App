@@ -3,7 +3,6 @@ import Movies from "./movies";
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
-import logo from "../public/logo.svg";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -292,7 +291,7 @@ export default function App() {
                 </button>
                 <ul>
                   {searchResults.map((result) => (
-                    <li key={result.id}>{result.title}</li>
+                    <li key={result?.id}>{result?.title}</li>
                   ))}
                 </ul>
               </div>
@@ -309,7 +308,7 @@ export default function App() {
         <div className="px-6">
           <div className="grid grid-cols-4 gap-4 shadow shadow-gray-400 rounded-lg py-2 px-6">
             {popular.map((movie) => {
-              return <Movies key={movie.id} movie={movie} />;
+              return <Movies key={movie?.id} movie={movie} />;
             })}
           </div>
         </div>
